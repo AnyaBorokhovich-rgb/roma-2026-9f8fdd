@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#173e68">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Roma '26">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="The Borokhovich family's Rome guide — apartment, arrival, emergencies, money, Italian phrases and the full day-by-day itinerary for 6–12 September 2026.">
+<title>Roma 2026 · Family Guide</title>
+<style>
+:root{
+  --navy:#173e68;--navy-deep:#0f2c4d;--terracotta:#b84928;--terracotta-deep:#93381c;
+  --cream:#fbf3e5;--paper:#fffaf1;--ink:#241b15;--muted:#726457;--line:#e4d5b8;
+  --green:#3c7a55;--yellow:#f2bd44;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.55 -apple-system,"SF Pro Text",system-ui,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.shell{width:min(1080px,calc(100% - 32px));margin:auto}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;margin:0}
+
+/* ---- Sticky top bar + drawer ---- */
+.topbar{position:sticky;top:0;z-index:30;background:#fffaf1ee;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.topbar-inner{display:flex;align-items:center;justify-content:space-between;min-height:56px}
+.brand{font:800 1.15rem Georgia,serif;color:var(--terracotta);text-decoration:none}
+.menu-btn{display:flex;align-items:center;gap:7px;background:var(--navy);color:#fff;border:0;border-radius:99px;padding:9px 14px;font-weight:800;font-size:.86rem;cursor:pointer}
+.menu-btn:active{opacity:.85}
+.drawer-overlay{position:fixed;inset:0;background:#0f2c4dcc;z-index:39;opacity:0;visibility:hidden;transition:opacity .22s}
+.drawer-overlay.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(340px,86vw);background:var(--paper);z-index:40;box-shadow:-18px 0 40px #0f2c4d33;transform:translateX(100%);transition:transform .26s ease;overflow-y:auto;padding:6px 6px 30px}
+.drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:14px 12px 8px}
+.drawer-head span{font:800 1.1rem Georgia,serif;color:var(--navy)}
+.drawer-close{border:0;background:transparent;font-size:26px;line-height:1;color:var(--muted);cursor:pointer;padding:4px 8px}
+.drawer-group{padding:10px 14px 4px}
+.drawer-group h4{margin:6px 4px 8px;font:800 .72rem/1 -apple-system,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--terracotta)}
+.drawer-group a{display:flex;align-items:center;justify-content:space-between;gap:8px;text-decoration:none;color:var(--ink);font-weight:700;font-size:.98rem;padding:11px 8px;border-radius:10px}
+.drawer-group a:active,.drawer-group a:hover{background:#f2e5cc}
+.today-dot{background:var(--terracotta);color:#fff;font-size:.66rem;font-weight:800;letter-spacing:.04em;border-radius:99px;padding:3px 8px;white-space:nowrap}
+
+/* ---- Hero ---- */
+.hero{padding:34px 0 26px}
+.eyebrow{display:inline-block;color:var(--terracotta);font:italic 1rem Georgia,serif}
+.hero h1{font:600 clamp(2.6rem,10vw,4.6rem)/.98;letter-spacing:-.03em;color:var(--navy);margin:8px 0 12px}
+.hero p{max-width:620px;color:var(--muted);font-size:1.05rem;margin:0 0 16px}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.chip{border:1px solid var(--line);border-radius:99px;padding:7px 13px;background:var(--paper);font-size:.83rem;font-weight:700;color:var(--navy)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px}
+.privacy-notice{margin-top:22px;border:1px solid var(--line);background:var(--paper);padding:12px 15px;border-radius:8px;font-size:.9rem;color:var(--muted)}
+.privacy-notice b{color:var(--terracotta)}
+
+/* ---- Shared bits ---- */
+main{padding-bottom:60px}
+section{scroll-margin-top:68px;margin:52px 0}
+.head{max-width:680px;margin:0 0 18px}
+.head .kicker{color:var(--terracotta);font:italic .95rem Georgia,serif}
+.head h2{font:600 clamp(1.8rem,5vw,2.6rem);color:var(--navy);margin:4px 0 0}
+.head p{color:var(--muted);margin:8px 0 0}
+.btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;border-radius:99px;padding:11px 16px;font-weight:800;font-size:.88rem;background:#e9eef4;color:var(--navy)}
+.btn:hover{background:var(--navy);color:#fff}
+.btn.primary{background:var(--terracotta);color:#fff}
+.btn.primary:hover{background:var(--terracotta-deep)}
+.btn.ticket{background:#fde1db;color:#93381c}
+.btn.ticket:hover{background:var(--terracotta);color:#fff}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.notice{border:1px solid var(--line);background:var(--paper);padding:13px 16px;border-radius:10px;margin-top:16px;font-size:.92rem;color:var(--ink)}
+.notice b{color:var(--terracotta)}
+.source{font-size:.82rem;color:var(--muted);margin-top:10px}
+.source a{text-decoration:underline}
+
+/* ---- Arrival gallery ---- */
+.gallery{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 14px;-webkit-overflow-scrolling:touch}
+.photo{flex:0 0 min(78vw,320px);scroll-snap-align:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer}
+.photo img{width:100%;height:220px;object-fit:cover;display:block}
+.photo .copy{padding:13px 15px}
+.step{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--terracotta);color:#fff;font:700 .8rem Georgia,serif;margin-bottom:6px}
+.photo h3{font-size:1.02rem;margin:2px 0 4px}
+.photo p{margin:0;color:var(--muted);font-size:.86rem}
+.zoom{display:block;margin-top:6px;color:var(--terracotta);font-size:.78rem;font-weight:800}
+
+/* ---- Reveal-secret cards ---- */
+.sensitive{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.secret small{display:block;color:var(--terracotta);font-size:.72rem;font-weight:800;letter-spacing:.06em}
+.secret .value{display:block;font:700 1rem/1.4 ui-monospace,Menlo,monospace;filter:blur(6px);user-select:none;margin:6px 0 10px;word-break:break-all}
+.secret .value.show{filter:none;user-select:text}
+.secret-btns{display:flex;gap:8px}
+.secret button{border:0;background:var(--navy);color:#fff;border-radius:7px;padding:8px 12px;font-weight:700;font-size:.82rem;cursor:pointer}
+.secret button.copy-btn{background:transparent;color:var(--navy);box-shadow:inset 0 0 0 1px var(--navy)}
+.secret button.copy-btn.copied{background:var(--green);color:#fff;box-shadow:none}
+
+/* ---- Emergency ---- */
+.emergencies{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.emergency{text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 8px}
+.emergency i{font-style:normal;font-size:24px}
+.emergency strong{display:block;font:700 1.5rem Georgia,serif;color:var(--terracotta);margin:2px 0}
+.emergency small{display:block;color:var(--muted);font-size:.72rem}
+.emergency a{display:inline-block;margin-top:8px;background:var(--terracotta);color:#fff;text-decoration:none;padding:7px 10px;border-radius:7px;font-weight:800;font-size:.8rem}
+
+/* ---- Money ---- */
+.money{display:grid;grid-template-columns:.85fr 1.15fr;gap:14px}
+.rate{display:grid;place-items:center;text-align:center;background:var(--navy);color:#fff;border-radius:14px;padding:22px 12px}
+.rate strong{font:700 clamp(1.9rem,6vw,2.6rem) Georgia,serif;display:block}
+.rate span{opacity:.8;font-size:.78rem}
+.examples{display:grid;gap:8px}
+.price{display:flex;justify-content:space-between;gap:12px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 13px;font-size:.92rem}
+.price b{color:var(--terracotta);white-space:nowrap}
+
+/* ---- Useful links ---- */
+.links-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.link-tile{display:block;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:13px 15px;text-decoration:none;color:var(--ink);font-weight:700;font-size:.92rem}
+.link-tile:hover{background:var(--navy);color:#fff}
+
+/* ---- Italian phrases ---- */
+.phrase-list{display:grid;gap:8px}
+.phrase{display:grid;grid-template-columns:1fr 1fr auto;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:11px 13px}
+.phrase .en{font-size:.88rem;color:var(--muted)}
+.phrase .it{font-weight:800;color:var(--navy)}
+.phrase .say{grid-column:1/3;color:var(--muted);font-size:.76rem;margin-top:-4px}
+.speak{border:1px solid var(--terracotta);background:transparent;color:var(--terracotta);border-radius:50%;width:34px;height:34px;cursor:pointer;font-size:16px}
+.speak.playing,.speak:hover{background:var(--terracotta);color:#fff}
+
+/* ---- Itinerary days ---- */
+.today-flag{display:inline-flex;align-items:center;gap:6px;background:var(--terracotta);color:#fff;border-radius:99px;padding:6px 12px;font-size:.76rem;font-weight:800;letter-spacing:.03em;margin-bottom:10px}
+.day{margin:0 0 46px}
+.mini-day{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:18px}
+.day-head{display:grid;grid-template-columns:78px 1fr;gap:16px;align-items:start;margin-bottom:14px}
+.date-box{background:var(--terracotta);color:#fff;border-radius:14px;padding:10px 6px;text-align:center}
+.date-box b{display:block;font:700 1.6rem/1 Georgia,serif}
+.date-box span{display:block;font-weight:800;text-transform:uppercase;letter-spacing:.05em;font-size:.62rem}
+.day h2{font:600 clamp(1.6rem,5vw,2.3rem);color:var(--navy);line-height:1}
+.day-intro{margin:6px 0 0;color:var(--muted);font-size:.94rem}
+.feature{height:190px;border-radius:16px;overflow:hidden;margin:14px 0;position:relative;background:#ddd}
+.feature img{width:100%;height:100%;object-fit:cover}
+.feature:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#0e2f52a8,transparent 55%)}
+.feature-label{position:absolute;z-index:1;left:14px;bottom:12px;color:#fff;font:700 .92rem Georgia,serif}
+.parts{display:grid;gap:12px}
+.part{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px}
+.part h3{display:flex;gap:8px;align-items:center;margin:0 0 10px;color:var(--terracotta);font-size:1.08rem}
+.part h3 span{font:800 .64rem/1 -apple-system,sans-serif;color:#fff;background:var(--navy);padding:5px 8px;border-radius:99px;text-transform:uppercase;letter-spacing:.06em}
+.stop{padding:10px 0;border-top:1px solid #eadfc9}
+.stop:first-of-type{border-top:0;padding-top:0}
+.stop-title{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.stop b{font-size:.96rem}
+.stop p{margin:4px 0 0;color:var(--muted);font-size:.87rem}
+.stop .links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.time{white-space:nowrap;color:var(--green);font-size:.68rem;font-weight:900;text-transform:uppercase}
+.booking{margin:12px 0 0;background:var(--navy);color:#fff;border-radius:16px;padding:14px 16px}
+.booking b{font-family:Georgia,serif;font-size:1rem;display:block}
+.booking small{display:block;color:#dce7f2;margin-top:2px}
+.booking .links{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+.booking .btn{background:#fff}
+.booking .btn.ticket{background:var(--yellow);color:#3e2a00}
+.optional{margin-top:14px;border:2px dashed #d0b77f;border-radius:16px;padding:14px 16px;background:#fff3d6}
+.optional h3{margin:0 0 6px;color:var(--navy);font-size:1.02rem}
+.optional ul{margin:4px 0 0;padding-left:18px;font-size:.9rem;color:var(--ink)}
+.flight-card{margin-top:14px;border:1px solid var(--line);border-radius:14px;background:#fffaf0;padding:13px 14px}
+.flight-label{margin-bottom:9px;color:var(--terracotta);font-size:.68rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+.flight-route{display:grid;grid-template-columns:1fr 40px 1fr;gap:8px;align-items:center}
+.airport:last-child{text-align:right}
+.airport strong{display:block;color:var(--navy);font-size:.94rem}
+.airport span{display:block;color:var(--muted);font-size:.74rem}
+.airport time{display:block;margin-top:4px;font-weight:800;font-size:.82rem}
+.flight-arrow{position:relative;height:2px;background:var(--terracotta)}
+.flight-arrow:before{content:"✈";position:absolute;left:50%;top:50%;padding:3px;background:#fffaf0;color:var(--terracotta);font-size:.95rem;transform:translate(-50%,-54%)}
+
+/* ---- Pantheon Voice Guide ---- */
+.voice-guide{margin-top:10px;border:1px solid var(--line);border-radius:12px;background:#f4ecdd;padding:12px 13px}
+.vg-lang-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.vg-lang-btn{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:99px;padding:7px 12px;font-weight:800;font-size:.78rem;cursor:pointer}
+.vg-lang-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.voice-guide-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.vg-play{display:inline-flex;align-items:center;gap:7px;border:0;background:var(--terracotta);color:#fff;border-radius:99px;padding:9px 14px;font-weight:800;font-size:.83rem;cursor:pointer}
+.vg-play.playing{background:var(--navy)}
+.vg-text-toggle{border:1px solid var(--terracotta);background:transparent;color:var(--terracotta);border-radius:99px;padding:9px 14px;font-weight:800;font-size:.83rem;cursor:pointer}
+.vg-hint{font-size:.78rem;color:var(--muted);width:100%;margin-top:2px}
+.vg-transcript{display:none;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);font-size:.92rem;line-height:1.75;color:var(--ink)}
+.vg-transcript.open{display:block}
+.vg-transcript p{margin:0 0 10px}
+
+/* ---- Extra picks ---- */
+.pick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pick{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:13px 14px}
+.pick b{display:block;color:var(--terracotta);margin-bottom:3px;font-size:.94rem}
+.pick p{margin:0;color:var(--muted);font-size:.85rem}
+
+/* ---- Modal (gallery lightbox) ---- */
+.modal{position:fixed;inset:0;z-index:100;background:#241711ed;display:none;align-items:center;justify-content:center;padding:16px}
+.modal.open{display:flex}
+.modal-box{width:min(560px,96vw);background:var(--paper);border-radius:14px;overflow:hidden;position:relative}
+.modal img{width:100%;height:min(56vh,420px);object-fit:contain;background:#1d1511}
+.caption{padding:14px 56px 18px;text-align:center}
+.caption strong{font:700 1.05rem Georgia,serif}
+.close,.prev,.next{position:absolute;border:0;background:var(--paper);color:var(--navy);border-radius:50%;width:38px;height:38px;font-size:20px;cursor:pointer}
+.close{top:10px;right:10px}
+.prev,.next{top:42%}
+.prev{left:8px}
+.next{right:8px}
+
+footer{background:var(--navy);color:#dce7f2;padding:28px 0;margin-top:10px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.footer-inner b{color:#fff;font-family:Georgia,serif;font-size:1.1rem}
+.to-top{text-decoration:none;color:#fff;border:1px solid #ffffff4a;border-radius:99px;padding:8px 12px;font-size:.85rem}
+
+@media(min-width:700px){
+  .day-head{grid-template-columns:96px 1fr}
+  .parts{grid-template-columns:repeat(3,1fr)}
+  .feature{height:260px}
+  .emergencies{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:480px){
+  .sensitive,.grid2,.money,.links-grid,.pick-grid{grid-template-columns:1fr}
+  .emergencies{grid-template-columns:1fr 1fr}
+  .phrase{grid-template-columns:1fr auto}
+  .phrase .it{grid-column:1/2}
+  .phrase .say{grid-column:1/3}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="shell topbar-inner">
+    <a class="brand" href="#top" id="top">Roma '26</a>
+    <button class="menu-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false">☰ Menu</button>
+  </div>
+</div>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<nav class="drawer" id="drawer" aria-label="Site navigation">
+  <div class="drawer-head"><span>Menu</span><button class="drawer-close" id="drawerClose" aria-label="Close menu">×</button></div>
+  <div class="drawer-group">
+    <h4>Essentials</h4>
+    <a href="#stay">Stay</a>
+    <a href="#arrival">Getting in</a>
+    <a href="#essentials">Wi-Fi &amp; codes</a>
+    <a href="#emergency">Emergency</a>
+    <a href="#money">Money</a>
+    <a href="#links">Useful links</a>
+    <a href="#italian">Italian phrases</a>
+  </div>
+  <div class="drawer-group">
+    <h4>Itinerary</h4>
+    <a href="#sun" data-day="6">Sun 6 · Arrival</a>
+    <a href="#mon" data-day="7">Mon 7 · Historic Rome</a>
+    <a href="#tue" data-day="8">Tue 8 · Shopping &amp; Monti</a>
+    <a href="#wed" data-day="9">Wed 9 · Vatican</a>
+    <a href="#thu" data-day="10">Thu 10 · Ancient Rome</a>
+    <a href="#fri" data-day="11">Fri 11 · Free day &amp; dinner</a>
+    <a href="#sat" data-day="12">Sat 12 · Departure</a>
+    <a href="#picks">Extra picks</a>
+  </div>
+</nav>
+
+<header class="shell hero">
+  <span class="eyebrow">La famiglia Borokhovich · 6–12 September</span>
+  <h1>Roma,<br>all in one place.</h1>
+  <p>Apartment access, emergencies, money, a little Italian, and the full day-by-day plan.</p>
+  <div class="hero-chips">
+    <span class="chip">4 travellers</span>
+    <span class="chip">Via dei Leutari 29</span>
+    <span class="chip">Tickets &amp; PDFs saved inside</span>
+  </div>
+  <div class="hero-actions">
+    <a class="btn primary" href="#arrival">Getting into the apartment →</a>
+    <a class="btn" href="#mon">Jump to day-by-day →</a>
+  </div>
+  <div class="privacy-notice"><b>Family only — keep this link private.</b> It contains apartment access details and booking codes.</div>
+</header>
+
+<main class="shell">
+
+  <section id="stay">
+    <div class="head"><span class="kicker">La nostra casa a Roma</span><h2>Your stay</h2></div>
+    <div class="grid2">
+      <div class="card"><small style="color:var(--terracotta);font-weight:800;font-size:.72rem;letter-spacing:.06em">ADDRESS</small><br>Via dei Leutari 29<br>00186 Roma RM, Italy</div>
+      <div class="card"><small style="color:var(--terracotta);font-weight:800;font-size:.72rem;letter-spacing:.06em">DATES</small><br>Check-in: Sunday 6 September, from 15:00<br>Checkout: Saturday 12 September, by 11:00</div>
+    </div>
+    <div class="flight-card" aria-label="Flight from Tel Aviv to Rome" style="margin-top:12px">
+      <div class="flight-label">Arrival flight</div>
+      <div class="flight-route">
+        <div class="airport"><strong>Tel Aviv (TLV)</strong><span>Departs</span><time datetime="2026-09-06T19:40">06/09/2026 · 19:40</time></div>
+        <div class="flight-arrow" aria-hidden="true"></div>
+        <div class="airport"><strong>Rome Fiumicino (FCO)</strong><span>Arrives</span><time datetime="2026-09-06T22:30">06/09/2026 · 22:30</time></div>
+      </div>
+    </div>
+    <div class="flight-card" aria-label="Flight from Rome to Tel Aviv" style="margin-top:10px">
+      <div class="flight-label">Departure flight</div>
+      <div class="flight-route">
+        <div class="airport"><strong>Rome Fiumicino (FCO)</strong><span>Departs</span><time datetime="2026-09-12T14:15">12/09/2026 · 14:15</time></div>
+        <div class="flight-arrow" aria-hidden="true"></div>
+        <div class="airport"><strong>Tel Aviv (TLV)</strong><span>Arrives</span><time datetime="2026-09-12T18:45">12/09/2026 · 18:45</time></div>
+      </div>
+    </div>
+    <div class="hero-actions" style="margin-top:12px">
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Via+dei+Leutari+29+Rome">📍 Google Maps</a>
+      <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=Via+dei+Leutari+29,+Rome">Get directions</a>
+    </div>
+    <div class="notice"><b>Privacy:</b> share this guide only with the family; it contains access and booking details.</div>
+  </section>
+
+  <section id="arrival">
+    <div class="head"><span class="kicker">Passo dopo passo</span><h2>Getting inside</h2><p>Swipe sideways. Tap any photo to open it larger.</p></div>
+    <div class="gallery" id="gallery">
+      <article class="photo" data-i="0" tabindex="0"><img src="https://anya-rome-family-guide-2026.anyamass.chatgpt.site/assets/entrance.jpg" alt="Building entrance"><div class="copy"><span class="step">1</span><h3>Find the entrance</h3><p>Via dei Leutari 29. Use the host's opening link or the keypad under the intercom.</p><span class="zoom">Tap to enlarge ↗</span></div></article>
+      <article class="photo" data-i="1" tabindex="0"><img src="https://anya-rome-family-guide-2026.anyamass.chatgpt.site/assets/intercom.jpg" alt="Building intercom"><div class="copy"><span class="step">2</span><h3>Find the elevator</h3><p>Walk straight after entering. The elevator is on your right. Go to the 3rd floor.</p><span class="zoom">Tap to enlarge ↗</span></div></article>
+      <article class="photo" data-i="2" tabindex="0"><img src="https://anya-rome-family-guide-2026.anyamass.chatgpt.site/assets/landing.jpg" alt="Third floor landing"><div class="copy"><span class="step">3</span><h3>Turn right</h3><p>On the 3rd floor, turn right and climb about 5–6 steps.</p><span class="zoom">Tap to enlarge ↗</span></div></article>
+      <article class="photo" data-i="3" tabindex="0"><img src="https://anya-rome-family-guide-2026.anyamass.chatgpt.site/assets/stairs.jpg" alt="Short stairs"><div class="copy"><span class="step">4</span><h3>Turn left</h3><p>At the top of the short stairs, turn left toward the apartment.</p><span class="zoom">Tap to enlarge ↗</span></div></article>
+      <article class="photo" data-i="4" tabindex="0"><img src="https://anya-rome-family-guide-2026.anyamass.chatgpt.site/assets/keybox.jpg" alt="Key box beside apartment"><div class="copy"><span class="step">5</span><h3>Collect the keys</h3><p>The key box is on the wall to the right of the green apartment door.</p><span class="zoom">Tap to enlarge ↗</span></div></article>
+    </div>
+  </section>
+
+  <section id="essentials">
+    <div class="head"><span class="kicker">Informazioni utili</span><h2>Apartment essentials</h2></div>
+    <div class="sensitive">
+      <div class="card secret"><small>WI-FI NETWORK</small><span class="value">Wind3 HUB - 487911</span><div class="secret-btns"><button onclick="reveal(this)">Tap to reveal</button><button class="copy-btn" onclick="copyValue(this)">Copy</button></div></div>
+      <div class="card secret"><small>WI-FI PASSWORD</small><span class="value">8lqt1gx59nlr7fgb</span><div class="secret-btns"><button onclick="reveal(this)">Tap to reveal</button><button class="copy-btn" onclick="copyValue(this)">Copy</button></div></div>
+      <div class="card secret"><small>BOOKING CONFIRMATION</small><span class="value">HMJK9CBZM9</span><div class="secret-btns"><button onclick="reveal(this)">Tap to reveal</button><button class="copy-btn" onclick="copyValue(this)">Copy</button></div></div>
+      <div class="card secret"><small>HOST REFERENCE</small><span class="value">7LHNT8XP</span><div class="secret-btns"><button onclick="reveal(this)">Tap to reveal</button><button class="copy-btn" onclick="copyValue(this)">Copy</button></div></div>
+    </div>
+    <div class="notice">Quote <b>7LHNT8XP</b> to Emma on Airbnb. Close both inner doors tightly.</div>
+  </section>
+
+  <section id="emergency">
+    <div class="head"><span class="kicker">Solo se serve</span><h2>Emergency information</h2><p>Tap a number below to call from a phone in Italy.</p></div>
+    <div class="emergencies">
+      <div class="emergency"><i>🆘</i><strong>112</strong><small>General emergency</small><a href="tel:112">Call 112</a></div>
+      <div class="emergency"><i>🚑</i><strong>118</strong><small>Ambulance / medical</small><a href="tel:118">Call 118</a></div>
+      <div class="emergency"><i>👮</i><strong>113</strong><small>State Police</small><a href="tel:113">Call 113</a></div>
+      <div class="emergency"><i>🚒</i><strong>115</strong><small>Fire service</small><a href="tel:115">Call 115</a></div>
+    </div>
+    <div class="notice"><b>If unsure, call 112.</b> Say "Emergenza. Parla inglese?" and give the address: <b>Via dei Leutari 29, Roma</b>.</div>
+    <div class="notice">These numbers dial correctly on an Israeli roaming SIM too — emergency calls always route through the local Italian network, no country code needed.</div>
+    <p class="source">Checked against <a target="_blank" href="https://www.gov.uk/foreign-travel-advice/italy/getting-help">official Italy travel guidance</a>.</p>
+  </section>
+
+  <section id="money">
+    <div class="head"><span class="kicker">Quanto costa?</span><h2>Euros in shekels</h2></div>
+    <div class="money">
+      <div class="rate"><strong id="rateValue">€1 ≈ ₪3.49</strong><span id="rateMeta">Offline reference rate · 4 September 2026</span></div>
+      <div class="examples">
+        <div class="price"><span>🍝 Pasta — example</span><b data-eur="14">€14 ≈ ₪48.90</b></div>
+        <div class="price"><span>🍦 Gelato — example</span><b data-eur="4">€4 ≈ ₪14.00</b></div>
+        <div class="price"><span>☕ Espresso — example</span><b data-eur="2">€2 ≈ ₪7.00</b></div>
+        <div class="price"><span>👨‍👩‍👧‍👦 Four €14 pasta dishes</span><b data-eur="56">€56 ≈ ₪195.60</b></div>
+      </div>
+    </div>
+    <div class="notice">Easy calculation: multiply euros by <b>3.5</b>. Your card or cash rate may differ slightly.</div>
+    <p class="source" id="rateSource">Live ECB rate when online. Prices are examples, not fixed menus.</p>
+  </section>
+
+  <section id="links">
+    <div class="head"><span class="kicker">Apri e vai</span><h2>Useful links</h2></div>
+    <div class="links-grid">
+      <a class="link-tile" target="_blank" href="https://www.airbnb.com/s/guidebooks?refinement_paths[]=/guidebooks/4993716">Emma's Airbnb recommendations →</a>
+      <a class="link-tile" target="_blank" href="https://www.google.com/maps/dir/?api=1&origin=Piazza+Navona,+Rome&destination=Via+dei+Leutari+29,+Rome&travelmode=walking">Walk from Piazza Navona →</a>
+      <a class="link-tile" target="_blank" href="https://www.google.com/maps/search/?api=1&query=pharmacy+near+Via+dei+Leutari+29+Rome">Nearby pharmacy →</a>
+      <a class="link-tile" target="_blank" href="https://www.google.com/maps/search/?api=1&query=supermarket+near+Via+dei+Leutari+29+Rome">Nearby supermarket →</a>
+      <a class="link-tile" target="_blank" href="https://www.google.com/maps/search/?api=1&query=taxi+stand+near+Via+dei+Leutari+29+Rome">Nearby taxi stand →</a>
+      <a class="link-tile" href="https://anya-rome-family-guide-2026.anyamass.chatgpt.site/Rome_Family_Guide_2026.pdf" download>Download printable PDF →</a>
+    </div>
+  </section>
+
+  <section id="italian">
+    <div class="head"><span class="kicker">Parliamo italiano!</span><h2>Useful Italian</h2><p>Tap the speaker to hear each phrase.</p></div>
+    <div class="phrase-list" id="phraseList"></div>
+    <div class="notice">Uses your device's Italian voice.</div>
+  </section>
+
+  <section id="itinerary-intro" style="margin-bottom:0">
+    <div class="head"><span class="kicker">Giorno per giorno</span><h2>Day by day</h2><p>The full plan — maps, tickets and confirmed bookings exactly where you need them.</p></div>
+  </section>
+
+  <section class="day" id="sun">
+    <div class="mini-day">
+      <div id="todayFlagHolder6"></div>
+      <div class="day-head"><div class="date-box"><span>Sunday</span><b>6</b><span>September</span></div><div><h2>Arrival in Rome</h2><p class="day-intro">Fly to Rome, travel to <b>Via dei Leutari 29</b>, settle in and rest. No sightseeing is planned.</p></div></div>
+      <div class="flight-card" aria-label="Flight from Tel Aviv to Rome">
+        <div class="flight-label">Arrival flight</div>
+        <div class="flight-route">
+          <div class="airport"><strong>Tel Aviv (TLV)</strong><span>Departs</span><time datetime="2026-09-06T19:40">06/09/2026 · 19:40</time></div>
+          <div class="flight-arrow" aria-hidden="true"></div>
+          <div class="airport"><strong>Rome Fiumicino (FCO)</strong><span>Arrives</span><time datetime="2026-09-06T22:30">06/09/2026 · 22:30</time></div>
+        </div>
+      </div>
+      <div class="stop-links links" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+        <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Via%20dei%20Leutari%2029%20Rome">Apartment on map</a>
+        <a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=Rome%20Fiumicino%20Airport&destination=Via%20dei%20Leutari%2029%20Rome">Airport → apartment</a>
+        <a class="btn primary" target="_blank" rel="noopener" href="https://m.uber.com/ul/?action=setPickup">🚗 Order Uber</a>
+        <a class="btn primary" target="_blank" rel="noopener" href="https://www.ittaxi.it/">🚕 itTaxi (Rome)</a>
+      </div>
+      <p class="source" style="margin-top:8px">Uber opens the app (or its site) to request a ride from your current location. itTaxi is Rome's official taxi-booking app.</p>
+    </div>
+  </section>
+
+  <section class="day" id="mon">
+    <div id="todayFlagHolder7"></div>
+    <div class="day-head"><div class="date-box"><span>Monday</span><b>7</b><span>September</span></div><div><h2>Historic Rome</h2><p class="day-intro">Piazzas, fountains, Roman landmarks and the best of the neighborhood around your apartment.</p></div></div>
+    <div class="feature"><img src="https://rome-family-2026.anyamass.chatgpt.site/assets/central-rome.png" alt="Illustrated collage of central Rome landmarks"><span class="feature-label">Piazza Navona · Pantheon · Trevi · Spanish Steps</span></div>
+    <div class="parts">
+      <article class="part"><h3><span>Morning</span> Start nearby</h3>
+        <div class="stop"><div class="stop-title"><b>Breakfast at Barnum Roma</b></div><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Barnum%20Roma">Map</a></div></div>
+        <div class="stop"><div class="stop-title"><b>Piazza Navona</b></div><p>Begin with the square and Bernini's fountains.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Piazza%20Navona%20Rome">Map</a></div></div>
+        <div class="stop"><div class="stop-title"><b>Chiostro del Bramante</b></div><p>Exhibition space and café in a beautiful cloister.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Chiostro%20del%20Bramante%20Rome">Map</a><a class="btn" target="_blank" rel="noopener" href="https://www.chiostrodelbramante.it/">Official</a></div></div>
+      </article>
+      <article class="part"><h3><span>Afternoon</span> Icons of Rome</h3>
+        <div class="stop">
+          <div class="stop-title"><b>Pantheon</b></div>
+          <p>Allow around 15–20 minutes. Use the official ticket route rather than relying on an unofficial QR sign.</p>
+          <div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pantheon%20Rome">Map</a><a class="btn" target="_blank" rel="noopener" href="https://direzionemuseiroma.cultura.gov.it/en/pantheon/">Official</a></div>
+          <div class="voice-guide">
+            <div class="vg-lang-tabs" role="tablist" aria-label="Voice guide language">
+              <button class="vg-lang-btn active" data-lang="he" onclick="setVgLang('he',this)">🇮🇱 עברית</button>
+              <button class="vg-lang-btn" data-lang="ru" onclick="setVgLang('ru',this)">🇷🇺 Русский</button>
+              <button class="vg-lang-btn" data-lang="en" onclick="setVgLang('en',this)">🇬🇧 English</button>
+            </div>
+            <div class="voice-guide-top">
+              <button class="vg-play" id="vgPlayBtn" onclick="toggleVoiceGuide()">🎧 <span id="vgPlayLabel">Play voice guide</span></button>
+              <button class="vg-text-toggle" onclick="toggleVoiceText()">Show text</button>
+              <span class="vg-hint">For Lia &amp; Lior — put your headphones on, look up at the oculus, and press play while you're standing inside.</span>
+            </div>
+            <div class="vg-transcript" id="vgTranscript"></div>
+          </div>
+        </div>
+        <div class="stop"><div class="stop-title"><b>Trevi Fountain</b></div><p>Easy to revisit early or late if the crowd is heavy.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Trevi%20Fountain%20Rome">Map</a></div></div>
+        <div class="stop"><div class="stop-title"><b>Spanish Steps</b></div><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Spanish%20Steps%20Rome">Map</a></div></div>
+        <div class="stop"><div class="stop-title"><b>Gelato at Limon'è</b></div><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Limon%27e%20Rome%20gelato">Map</a></div></div>
+      </article>
+      <article class="part"><h3><span>Evening</span> Food &amp; streets</h3>
+        <div class="stop"><div class="stop-title"><b>Ristorante Abruzzi</b></div><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Ristorante%20Abruzzi%20Rome">Map</a></div></div>
+        <div class="stop"><div class="stop-title"><b>Campo de' Fiori &amp; Via Giulia</b></div><p>Browse the square, cafés and one of Rome's prettiest streets.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Campo%20de%20Fiori%20Rome">Campo map</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Via%20Giulia%20Rome">Via Giulia</a></div></div>
+        <div class="stop"><div class="stop-title"><b>Norcineria Viola · Forno del Campo · Trapizzino</b></div><p>Use these as flexible snack stops; no need to do all three.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Norcineria%20Viola%20Rome">Norcineria</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Forno%20del%20Campo%20Rome">Forno</a><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Trapizzino%20Rome">Trapizzino</a></div></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="day" id="tue">
+    <div id="todayFlagHolder8"></div>
+    <div class="day-head"><div class="date-box"><span>Tuesday</span><b>8</b><span>September</span></div><div><h2>Shopping, Monti &amp; Vespa</h2><p class="day-intro">A mix-and-match day: shopping, a playful museum stop and the lanes of Monti.</p></div></div>
+    <div class="parts">
+      <article class="part"><h3><span>Morning</span> Shopping</h3>
+        <div class="stop"><div class="stop-title"><b>Via del Corso</b></div><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Via%20del%20Corso%20Rome">Map</a></div></div>
+        <div class="stop"><div class="stop-title"><b>Rinascente Roma</b></div><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rinascente%20Roma%20Via%20del%20Tritone">Map</a><a class="btn" target="_blank" rel="noopener" href="https://www.rinascente.it/en/store-roma-via-del-tritone">Official</a></div></div>
+        <div class="stop"><div class="stop-title"><b>Porta di Roma</b></div><p>Large mall option if you want a longer shopping session outside the centre.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Shopping%20Mall%20Porta%20di%20Roma">Map</a></div></div>
+      </article>
+      <article class="part"><h3><span>Afternoon</span> Sights &amp; Monti</h3>
+        <div class="stop"><div class="stop-title"><b>Mouth of Truth</b></div><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Mouth%20of%20Truth%20Rome">Map</a></div></div>
+        <div class="stop"><div class="stop-title"><b>Spazio Museo Vespa</b></div><p>A small stop for Vespa design and history.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Spazio%20Museo%20Vespa%20Rome">Map</a></div></div>
+        <div class="stop"><div class="stop-title"><b>Walk through Monti</b></div><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Monti%20Rome">Map</a></div></div>
+      </article>
+      <article class="part"><h3><span>Food</span> Easy choices</h3>
+        <div class="stop"><div class="stop-title"><b>Pizzeria della Madonna dei Monti</b></div><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Pizzeria%20della%20Madonna%20dei%20Monti%20Rome">Map</a></div></div>
+        <div class="stop"><div class="stop-title"><b>I Pizzicaroli</b></div><p>Listed as a special evening food stop near Piazza Navona.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=I%20Pizzicaroli%20Rome">Map</a></div></div>
+      </article>
+    </div>
+    <aside class="optional"><h3>Optional alternative: e-bike day</h3><ul><li>Guided Appian Way and Roman Aqueducts tour</li><li>Hidden Rome small-group ride with street-food stops</li><li>Appian Way, Aqueducts and Catacombs ride with food</li></ul><div class="links" style="margin-top:8px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/search?q=Rome+guided+e-bike+Appian+Way+Roman+Aqueducts">Search tour options</a></div></aside>
+  </section>
+
+  <section class="day" id="wed">
+    <div id="todayFlagHolder9"></div>
+    <div class="day-head"><div class="date-box"><span>Wednesday</span><b>9</b><span>September</span></div><div><h2>Vatican day</h2><p class="day-intro">The fixed booking sequence: Vatican Museums, St. Peter's Basilica, then the Dome by stairs.</p></div></div>
+    <div class="feature"><img src="https://rome-family-2026.anyamass.chatgpt.site/assets/vatican.png" alt="Illustrated view of St Peter's Basilica and Vatican Museums"><span class="feature-label">Vatican Museums · St. Peter's Basilica · Dome</span></div>
+    <div class="parts">
+      <article class="part"><h3><span>Before</span> Arrive prepared</h3>
+        <div class="stop"><div class="stop-title"><b>Vatican Museums entrance</b><span class="time">Arrive 13:00</span></div><p>Use Viale Vaticano, Passageway 2. Bring the voucher and ID for reduced tickets.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Vatican%20Museums%20Entrance%20Viale%20Vaticano">Map</a><a class="btn" target="_blank" rel="noopener" href="https://www.museivaticani.va/">Official</a></div></div>
+      </article>
+      <article class="part"><h3><span>Afternoon</span> Confirmed visits</h3>
+        <div class="stop"><div class="stop-title"><b>Guided Vatican Museums tour</b><span class="time">13:30 · English</span></div><p>4 guests. Booking code 2L2N0T6H3TTG95HGK.</p><div class="links"><a class="btn ticket" target="_blank" href="https://rome-family-2026.anyamass.chatgpt.site/assets/vatican-museums-tickets.pdf">🎟 Open ticket PDF</a></div></div>
+        <div class="stop"><div class="stop-title"><b>St. Peter's Basilica</b><span class="time">15:00</span></div><p>Enter using the BLUE – SOBIESKI route from Via di Porta Angelica.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Via%20di%20Porta%20Angelica%20Vatican">Entrance map</a><a class="btn ticket" target="_blank" href="https://rome-family-2026.anyamass.chatgpt.site/assets/st-peters-entry-qr.pdf">🎟 QR &amp; instructions</a></div></div>
+        <div class="stop"><div class="stop-title"><b>Dome with stairs</b><span class="time">16:00</span></div><p>4 tickets. Continue inside the Basilica to the Sobieski stairs at least 15 minutes before entry.</p><div class="links"><a class="btn ticket" target="_blank" href="https://rome-family-2026.anyamass.chatgpt.site/assets/st-peters-dome-booking.pdf">🎟 Dome booking</a><a class="btn ticket" target="_blank" href="https://rome-family-2026.anyamass.chatgpt.site/assets/vatican-dome-voucher.pdf">🎟 Voucher copy</a></div></div>
+      </article>
+      <article class="part"><h3><span>After</span> Shop &amp; dinner</h3>
+        <div class="stop"><div class="stop-title"><b>Via Candia · Via Ottaviano · Via Cola di Rienzo</b></div><p>Shopping streets close to the Vatican.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Via%20Cola%20di%20Rienzo%20Rome">Map</a></div></div>
+        <div class="stop"><div class="stop-title"><b>Hostaria Costanza</b></div><p>Meat-focused restaurant listed for dinner.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Hostaria%20Costanza%20Rome">Map</a></div></div>
+      </article>
+    </div>
+    <div class="booking"><b>Booking reference TIE-940039</b><small>3 adults + 1 child · St. Peter's Basilica and Dome</small><div class="links"><a class="btn ticket" target="_blank" href="https://rome-family-2026.anyamass.chatgpt.site/assets/st-peters-entry-qr.pdf">Open entry instructions</a><a class="btn ticket" target="_blank" href="https://rome-family-2026.anyamass.chatgpt.site/assets/st-peters-dome-booking.pdf">Open full booking</a></div></div>
+  </section>
+
+  <section class="day" id="thu">
+    <div id="todayFlagHolder10"></div>
+    <div class="day-head"><div class="date-box"><span>Thursday</span><b>10</b><span>September</span></div><div><h2>Ancient Rome</h2><p class="day-intro">Colosseum Full Experience with Arena, plus the Roman Forum and Palatine Hill.</p></div></div>
+    <div class="feature"><img src="https://rome-family-2026.anyamass.chatgpt.site/assets/ancient-rome.png" alt="Illustrated Colosseum and Roman Forum panorama"><span class="feature-label">Colosseum · Arena · Roman Forum · Palatine Hill</span></div>
+    <div class="parts">
+      <article class="part"><h3><span>Morning</span> Keep it light</h3><div class="stop"><p>No fixed sightseeing planned. Save your energy, have breakfast and travel calmly to the archaeological area.</p></div></article>
+      <article class="part"><h3><span>Afternoon</span> Colosseum</h3>
+        <div class="stop"><div class="stop-title"><b>Full Experience – Arena</b><span class="time">15:00 · arrive 14:45</span></div><p>One Colosseum entry. Bring photo ID. The booked route includes levels 1–2 and the Arena; Underground and Attic are not included.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Colosseum%20Rome">Map</a><a class="btn" target="_blank" rel="noopener" href="https://colosseo.it/en/">Official</a><a class="btn ticket" target="_blank" href="https://rome-family-2026.anyamass.chatgpt.site/assets/colosseum-tickets.pdf">🎟 Open all tickets</a></div></div>
+      </article>
+      <article class="part"><h3><span>Flexible</span> Forum &amp; Palatine</h3>
+        <div class="stop"><div class="stop-title"><b>Roman Forum and Palatine Hill</b></div><p>Your ticket allows one entry on 9, 10 or 11 September. Wear comfortable shoes and keep IDs with you.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Roman%20Forum%20entrance%20Rome">Forum map</a><a class="btn ticket" target="_blank" href="https://rome-family-2026.anyamass.chatgpt.site/assets/colosseum-tickets.pdf">🎟 Same ticket PDF</a></div></div>
+      </article>
+    </div>
+    <div class="booking"><b>Official ticket: OCO4708206</b><small>Full Experience – Arena · valid for two consecutive days</small><div class="links"><a class="btn ticket" target="_blank" href="https://rome-family-2026.anyamass.chatgpt.site/assets/colosseum-tickets.pdf">Open ticket PDF</a></div></div>
+  </section>
+
+  <section class="day" id="fri">
+    <div id="todayFlagHolder11"></div>
+    <div class="day-head"><div class="date-box"><span>Friday</span><b>11</b><span>September</span></div><div><h2>Free day &amp; Le Petit Chef</h2><p class="day-intro">The daytime is open. Keep the evening relaxed and arrive early for the confirmed dinner show.</p></div></div>
+    <div class="parts">
+      <article class="part"><h3><span>Daytime</span> Your choice</h3><div class="stop"><p>Use this as a rest day, revisit a favorite place, or choose one of the "Extra picks" below.</p></div></article>
+      <article class="part"><h3><span>Evening</span> Hotel Aleph</h3><div class="stop"><div class="stop-title"><b>Go to Via di San Basilio 15</b><span class="time">Arrive by 19:30</span></div><p>All four guests should be present at least 30 minutes before the booking.</p><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Aleph%20Rome%20Hotel%20Via%20di%20San%20Basilio%2015">Map</a></div></div></article>
+      <article class="part"><h3><span>Confirmed</span> Le Petit Chef</h3><div class="stop"><div class="stop-title"><b>The Magical Cooking Book – Classic Menu</b><span class="time">20:00</span></div><p>4 guests. Deposit paid €100; open balance €296. Reservation BVAWL.</p><div class="links"><a class="btn ticket" target="_blank" href="https://rome-family-2026.anyamass.chatgpt.site/assets/le-petit-chef-reservation.pdf">🎟 Open reservation</a><a class="btn" target="_blank" rel="noopener" href="https://lepetitchef.com/rome">Official</a></div></div></article>
+    </div>
+  </section>
+
+  <section class="day" id="sat">
+    <div class="mini-day">
+      <div id="todayFlagHolder12"></div>
+      <div class="day-head"><div class="date-box"><span>Saturday</span><b>12</b><span>September</span></div><div><h2>Departure day</h2><p class="day-intro">Breakfast, packing and travel to Fiumicino Airport for the flight home.</p></div></div>
+      <div class="flight-card" aria-label="Flight from Rome to Tel Aviv">
+        <div class="flight-label">Departure flight</div>
+        <div class="flight-route">
+          <div class="airport"><strong>Rome Fiumicino (FCO)</strong><span>Departs</span><time datetime="2026-09-12T14:15">12/09/2026 · 14:15</time></div>
+          <div class="flight-arrow" aria-hidden="true"></div>
+          <div class="airport"><strong>Tel Aviv (TLV)</strong><span>Arrives</span><time datetime="2026-09-12T18:45">12/09/2026 · 18:45</time></div>
+        </div>
+      </div>
+      <div class="links" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=Via%20dei%20Leutari%2029%20Rome&destination=Rome%20Fiumicino%20Airport">Apartment → airport</a></div>
+    </div>
+  </section>
+
+  <section id="picks">
+    <div class="head"><span class="kicker">Extra scelte</span><h2>Extra picks</h2><p>Use these whenever they fit — they are intentionally not forced into a day.</p></div>
+    <div class="pick-grid">
+      <article class="pick"><b>Breakfast</b><p>Trecaffè · Via dei Due Macelli</p><div class="links" style="margin-top:6px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Trecaffe%20Via%20dei%20Due%20Macelli%20Rome">Map</a></div></article>
+      <article class="pick"><b>Rooftop</b><p>AcquaRoof Terrazza Molinari · The First Roma Arte</p><div class="links" style="margin-top:6px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=AcquaRoof%20Terrazza%20Molinari%20Rome">Map</a></div></article>
+      <article class="pick"><b>Optional visit</b><p>Rome Catacombs</p><div class="links" style="margin-top:6px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Rome%20Catacombs">Map</a></div></article>
+      <article class="pick"><b>Groceries</b><p>Antica Bottega dei Sapori Ruggeri</p><div class="links" style="margin-top:6px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Antica%20Bottega%20dei%20Sapori%20Ruggeri%20Rome">Map</a></div></article>
+      <article class="pick"><b>Supermarket</b><p>Carrefour Express near the apartment</p><div class="links" style="margin-top:6px"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Carrefour%20Express%20near%20Via%20dei%20Leutari%2029%20Rome">Map</a></div></article>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="shell footer-inner">
+    <div><b>Roma 2026 · Family Guide</b><br>Save this page on every family member's phone before arrival.</div>
+    <a class="to-top" href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button class="close" onclick="closeGallery()" aria-label="Close">×</button>
+    <button class="prev" onclick="move(-1)" aria-label="Previous">‹</button>
+    <img id="modalImg" alt="">
+    <button class="next" onclick="move(1)" aria-label="Next">›</button>
+    <div class="caption"><strong id="modalTitle"></strong><div id="modalText"></div></div>
+  </div>
+</div>
+
+<script>
+/* ---------- Drawer ---------- */
+const menuBtn=document.getElementById('menuBtn'),drawer=document.getElementById('drawer'),overlay=document.getElementById('drawerOverlay'),drawerClose=document.getElementById('drawerClose');
+function openDrawer(){drawer.classList.add('open');overlay.classList.add('open');menuBtn.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
+function closeDrawer(){drawer.classList.remove('open');overlay.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+menuBtn.onclick=openDrawer;drawerClose.onclick=closeDrawer;overlay.onclick=closeDrawer;
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeDrawer));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer()});
+
+/* ---------- Live EUR → ILS rate ---------- */
+function updateRate(rate,isLive){
+  document.getElementById('rateValue').textContent=`€1 ≈ ₪${rate.toFixed(2)}`;
+  document.getElementById('rateMeta').textContent=isLive
+    ? `Live rate · updated ${new Date().toLocaleString('en-GB',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})}`
+    : 'Offline reference rate · 4 September 2026';
+  document.querySelectorAll('.price b[data-eur]').forEach(b=>{
+    const eur=+b.dataset.eur;
+    b.textContent=`€${eur} ≈ ₪${(eur*rate).toFixed(2)}`;
+  });
+}
+fetch('https://api.frankfurter.app/latest?from=EUR&to=ILS')
+  .then(r=>r.json())
+  .then(d=>{const rate=d&&d.rates&&d.rates.ILS;if(rate)updateRate(rate,true)})
+  .catch(()=>{/* offline or blocked — the static reference rate already shown stays as-is */});
+
+/* ---------- Today highlighting ---------- */
+(function(){
+  const now=new Date();
+  if(now.getFullYear()===2026 && now.getMonth()===8){
+    const d=now.getDate();
+    const map={6:'sun',7:'mon',8:'tue',9:'wed',10:'thu',11:'fri',12:'sat'};
+    if(map[d]){
+      const link=drawer.querySelector('a[data-day="'+d+'"]');
+      if(link){const dot=document.createElement('span');dot.className='today-dot';dot.textContent='TODAY';link.appendChild(dot)}
+      const holder=document.getElementById('todayFlagHolder'+d);
+      if(holder){const flag=document.createElement('div');flag.className='today-flag';flag.textContent='📍 Today';holder.appendChild(flag)}
+    }
+  }
+})();
+
+/* ---------- Gallery lightbox ---------- */
+const G=[
+  ['https://anya-rome-family-guide-2026.anyamass.chatgpt.site/assets/entrance.jpg','Step 1 — Find the entrance',"Via dei Leutari 29. Use the host's opening link or the keypad."],
+  ['https://anya-rome-family-guide-2026.anyamass.chatgpt.site/assets/intercom.jpg','Step 2 — Find the elevator','Walk straight after entering. The elevator is on your right.'],
+  ['https://anya-rome-family-guide-2026.anyamass.chatgpt.site/assets/landing.jpg','Step 3 — Turn right','On the 3rd floor, turn right and climb about 5–6 steps.'],
+  ['https://anya-rome-family-guide-2026.anyamass.chatgpt.site/assets/stairs.jpg','Step 4 — Turn left','At the top of the short stairs, turn left toward the apartment.'],
+  ['https://anya-rome-family-guide-2026.anyamass.chatgpt.site/assets/keybox.jpg','Step 5 — Collect the keys','The key box is on the wall to the right of the green door.']
+];
+let gi=0;
+const modal=document.getElementById('modal'),modalImg=document.getElementById('modalImg'),modalTitle=document.getElementById('modalTitle'),modalText=document.getElementById('modalText');
+function render(){const x=G[gi];modalImg.src=x[0];modalImg.alt=x[1];modalTitle.textContent=x[1];modalText.textContent=x[2]}
+function openGallery(i){gi=i;render();modal.classList.add('open');document.body.style.overflow='hidden'}
+function closeGallery(){modal.classList.remove('open');document.body.style.overflow=''}
+function move(d){gi=(gi+d+G.length)%G.length;render()}
+document.querySelectorAll('.photo').forEach((x,i)=>{
+  x.onclick=()=>openGallery(i);
+  x.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openGallery(i)}}
+});
+modal.onclick=e=>{if(e.target===modal)closeGallery()};
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape')closeGallery();
+  if(modal.classList.contains('open')&&e.key==='ArrowRight')move(1);
+  if(modal.classList.contains('open')&&e.key==='ArrowLeft')move(-1);
+});
+
+/* ---------- Reveal secrets ---------- */
+function reveal(b){
+  const v=b.closest('.secret').querySelector('.value');
+  v.classList.toggle('show');
+  b.textContent=v.classList.contains('show')?'Hide':'Tap to reveal';
+}
+function copyValue(b){
+  const v=b.closest('.secret').querySelector('.value');
+  const text=v.textContent;
+  const done=()=>{
+    const original=b.textContent;
+    b.textContent='Copied!';b.classList.add('copied');
+    setTimeout(()=>{b.textContent=original;b.classList.remove('copied')},1500);
+  };
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(done);
+  }else{
+    const ta=document.createElement('textarea');
+    ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+    document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy')}catch(e){}
+    document.body.removeChild(ta);
+    done();
+  }
+}
+
+/* ---------- Italian phrases ---------- */
+const P=[
+  ['Hello / Good morning','Buongiorno','bwohn-JOR-noh'],
+  ['Hello / Goodbye','Ciao','chow'],
+  ['Good evening','Buonasera','bwoh-nah-SEH-rah'],
+  ['Goodbye','Arrivederci','ah-ree-veh-DEHR-chee'],
+  ['Please','Per favore','pehr fah-VOH-reh'],
+  ['Thank you','Grazie','GRAHT-tsyeh'],
+  ["You're welcome",'Prego','PREH-goh'],
+  ['Excuse me / Sorry','Scusi','SKOO-zee'],
+  ['Do you speak English?','Parla inglese?','PAR-lah een-GLAY-zeh'],
+  ["I don't understand",'Non capisco','non kah-PEE-skoh'],
+  ['Where is…?','Dov’è?','doh-VEH'],
+  ['How much is it?','Quanto costa?','KWAN-toh KOS-tah'],
+  ['May we have the bill?','Possiamo avere il conto?','poh-SYAH-moh ah-VEH-reh eel KON-toh'],
+  ['A table for four, please','Un tavolo per quattro, per favore','oon TAH-voh-loh pehr KWAHT-troh'],
+  ['Still water, please','Acqua naturale, per favore','AHK-kwah nah-too-RAH-leh'],
+  ['Sparkling water, please','Acqua frizzante, per favore','AHK-kwah freet-TSAHN-teh'],
+  ['Where is the bathroom?','Dov’è il bagno?','doh-VEH eel BAH-nyoh'],
+  ['Help!','Aiuto!','ah-YOO-toh']
+];
+const phraseList=document.getElementById('phraseList');
+phraseList.innerHTML=P.map((p,i)=>`<div class="phrase"><span class="en">${p[0]}</span><span class="it">${p[1]}</span><button class="speak" data-i="${i}" aria-label="Hear ${p[1]}">🔊</button><span class="say">${p[2]}</span></div>`).join('');
+document.querySelectorAll('.speak').forEach(b=>b.onclick=()=>speakIt(b,P[+b.dataset.i][1],'it-IT',.82));
+function speakIt(b,t,lang,rate){
+  if(!('speechSynthesis'in window)){alert('Voice playback is not supported by this browser.');return}
+  speechSynthesis.cancel();
+  document.querySelectorAll('.speak,.vg-play').forEach(x=>x.classList.remove('playing'));
+  const u=new SpeechSynthesisUtterance(t);
+  u.lang=lang;u.rate=rate;
+  u.voice=speechSynthesis.getVoices().find(v=>v.lang.toLowerCase().startsWith(lang.split('-')[0]))||null;
+  b.classList.add('playing');
+  u.onend=u.onerror=()=>b.classList.remove('playing');
+  speechSynthesis.speak(u);
+}
+
+/* ---------- Pantheon Voice Guide (Hebrew / Russian / English) ---------- */
+const VG_TEXT={
+he:[
+"היי ליה, היי ליאור. עצרו רגע כאן באמצע הפנתאון, תרימו את הראש, ותביטו למעלה. אתם רואים את החור העגול הגדול בתוך התקרה? זה נקרא ‘אוקולוס’ — ‘עין’, בלטינית. זאת העין הפתוחה של הבניין הזה, שדרכה השמש, האוויר והגשם נכנסים ישר לפנים כבר קרוב לאלפיים שנה.",
+"לפני שהמבנה שאתם עומדים בו נבנה, עמד כאן מקדש קטן יותר, שאותו הקים מצביא רומי בשם אגריפה. הרבה שנים אחר כך, הקיסר אדריאנוס — קיסר שהיה מאוד סקרן ואהב אדריכלות ומתמטיקה — בנה כאן מחדש בניין חדש לגמרי, ומרוב הערכה למקדש הישן, הוא השאיר על הכניסה את השם של אגריפה, ולא את שלו. בגלל זה, במשך מאות שנים אנשים חשבו בטעות שכל הבניין הוא המקורי של אגריפה.",
+"ותרצו לשמוע משהו מגניב על אגריפה עצמו, האיש שהשם שלו כתוב מעליכם עד היום? הוא לא נולד למשפחה מפורסמת או עשירה. הוא היה סתם נער שלמד וגדל לצד נער אחר בשם אוקטביאנוס, שמאוחר יותר הפך לקיסר הראשון של רומא, אוגוסטוס. השניים היו חברים טובים כבר מגיל צעיר.",
+"אבל אגריפה היה גאון אמיתי: מצביא מבריק, מהנדס מוכשר ובנאי חדשן — והוא הוכיח את זה מוקדם מאוד, כשעדיין היה בשנות העשרים לחייו. הוא הפך למפקד הצי הכי טוב של רומא, ובגיל שלושים ושתיים בערך הוא ניצח בקרב הים הגדול והמכריע ליד אקטיום, שקבע מי ישלוט על כל רומא. אוגוסטוס עצמו ידע שבלי הגאונות של אגריפה, הוא לא היה מגיע לשלטון.",
+"חוץ מהיותו מצביא מבריק, אגריפה גם בנה חלק ניכר מרומא העתיקה: אמות מים, מרזבים, ואפילו את בית המרחץ הציבורי הראשון בעיר. כמה שנים אחרי הניצחון הגדול שלו, הוא בנה את הפנתאון הראשון בכספו האישי — לא בשביל הכבוד שלו, אלא כמתנת תודה ‘לכל האלים’. ודווקא בגלל הענווה הזו, כשאדריאנוס בנה את הבניין שאתם עומדים בו עכשיו, כמעט מאה וחמישים שנה אחר כך, הוא בחר להשאיר את שמו של אגריפה על הכניסה ולא את שלו — מתוך הערכה לגאון הצעיר שהתחיל את הכול.",
+"תסתכלו סביבכם על החלל העגול הזה: הגובה מהרצפה עד לפסגת הכיפה שווה בדיוק לרוחב של החדר. אם היינו יכולים לקחת כדור מושלם ולהניח אותו כאן, הוא היה נכנס בול. זה לא במקרה — זה תכנון מדויק, מלפני כאלפיים שנה, בלי מחשבים ובלי כלים מודרניים.",
+"הכיפה שמעליכם היא עדיין, נכון להיום, הכיפה הגדולה בעולם שנבנתה מבטון בלי שום תמיכה של מתכת בפנים. הרומאים לא הכירו פלדה, אז הם היו חכמים בדרך אחרת: קרוב לפסגה הם השתמשו בחומרים קלים יותר, כדי שהכיפה לא תהיה כבדה מדי ותקרוס מכובד עצמה.",
+"השם ‘פנתאון’ הוא מילה יוונית שפירושה ‘לכל האלים’ — כי זה נבנה כמקדש לכבוד כל האלים הרומיים גם יחד, לא רק לאחד מהם. ואם אתם שואלים את עצמכם איך בניין כזה עתיק נשאר שלם, כשרוב הבניינים העתיקים ברומא קרסו או נהרסו — התשובה היא שבשנת 609, בערך אלף וארבע מאות שנה לאחר שנבנה, האפיפיור הפך אותו לכנסייה נוצרית. וכיוון שהוא הפך לכנסייה, אף אחד לא הרס אותו ואף אחד לא לקח ממנו אבנים לבניינים אחרים, כמו שקרה לחלק מהבניינים העתיקים האחרים בעיר.",
+"שימו לב גם לדלתות הברונזה הכבדות שעברתם בהן בכניסה — אלה דלתות מהתקופה הרומית עצמה, ועדיין פועלות היום בדיוק כמו אז. ואם יתחיל לרדת גשם כרגע — אל תדאגו: הגשם באמת יורד ישר מהאוקולוס אל תוך הבניין, אבל ברצפה יש חורים קטנים שמנקזים את המים, בדיוק כמו שהרומאים תכננו כשהם בנו את המקום.",
+"בתוך הפנתאון קבורים גם אנשים מאוד מוכרים — הצייר רפאל, אחד הציירים הגדולים בהיסטוריה של האמנות, קבור כאן, וכך גם שני מלכים איטלקים.",
+"אז ליה, ליאור — תעצרו לרגע, תרימו שוב את הראש לאוקולוס, ותחשבו שהאור הזה שנכנס עכשיו נכנס בדיוק באותה הצורה כבר כאלפיים שנה, עוד לפני שהיתה חשמל, לפני מכוניות, ולפני שכל אחד מהמשפחה שלנו נולד. אנחנו רק עוד כמה אנשים שעוצרים כאן רגע, ומביטים למעלה, בדיוק כמו כל מי שעמד כאן לפניכם."
+],
+ru:[
+"Привет, Лия, привет, Лиор. Поднимите голову — видите круглое отверстие в потолке? Это «окулус», по-латыни «глаз». Через него сюда почти две тысячи лет попадают солнце, воздух и дождь.",
+"Раньше здесь стоял храм поменьше, построенный полководцем Агриппой. Позже император Адриан построил совершенно новое здание, но из уважения оставил на входе имя Агриппы, а не своё. Поэтому веками люди думали, что всё здание — оригинал Агриппы.",
+"А вот интересный факт про самого Агриппу. Он не родился в знатной семье — просто мальчик, который рос рядом с другим мальчиком, Октавианом, будущим императором Августом. Они были близкими друзьями с юности.",
+"Но Агриппа был настоящим гением — блестящим полководцем и инженером, и доказал это совсем молодым. Он стал лучшим флотоводцем Рима, а в тридцать два года выиграл решающую битву у Акциума, определившую, кто будет править Римом. Август знал: без Агриппы он не пришёл бы к власти.",
+"Агриппа построил и часть древнего Рима: водопроводы и первые общественные бани. Через несколько лет после победы он построил первый Пантеон на свои деньги — не для славы, а как дар «всем богам». Именно за эту скромность Адриан позже оставил его имя на входе.",
+"Посмотрите вокруг: высота от пола до купола точно равна ширине зала — идеальный шар вошёл бы сюда точно. Это точный расчёт, сделанный две тысячи лет назад без компьютеров.",
+"Этот купол до сих пор самый большой в мире бетонный купол без металлической арматуры. Римляне не знали стали, поэтому ближе к вершине использовали более лёгкие материалы, чтобы купол не обрушился под своим весом.",
+"«Пантеон» — по-гречески «всем богам», ведь храм чтил всех римских богов сразу. Как он остался целым, когда рухнули другие древние постройки? В 609 году папа превратил его в церковь — а церкви никто не разрушал.",
+"Бронзовые двери на входе — те самые, римской эпохи, и до сих пор работают. Если пойдёт дождь — не переживайте: он падает прямо через окулус, но в полу есть отверстия для отвода воды, как задумали римляне.",
+"Внутри похоронены и известные люди — художник Рафаэль и два итальянских короля.",
+"Так что, Лия, Лиор — поднимите голову к окулусу ещё раз. Этот свет входит так же уже две тысячи лет — задолго до электричества и машин. Мы просто ещё несколько человек, что на минуту остановились здесь и посмотрели вверх."
+],
+en:[
+"Hi Lia, hi Lior. Stop here in the middle of the Pantheon, look up, and check out that big round opening in the ceiling. It's called the 'oculus' — Latin for 'eye.' It's the open eye of this building, and for almost two thousand years, sunlight, air, and rain have been coming in right through it.",
+"Before the building you're standing in existed, a smaller temple stood here, built by a Roman general named Agrippa. Many years later, the emperor Hadrian — a guy who was really into architecture and math — rebuilt it completely from scratch. But out of respect for the old temple, he kept Agrippa's name on the entrance instead of his own. That's actually why, for centuries, people mistakenly thought the whole building was Agrippa's original.",
+"Want to hear something cool about Agrippa himself, the guy whose name is still written above you? He wasn't born into a famous or wealthy family. He was just a kid who grew up and studied alongside another kid named Octavian — who later became Rome's first emperor, Augustus. The two of them were close friends from a young age.",
+"But Agrippa was a genuine genius: a brilliant general, a skilled engineer, and an innovative builder — and he proved it early, while he was still in his twenties. He became Rome's best naval commander, and at around thirty-two, he won the huge, decisive sea battle at Actium that decided who would rule all of Rome. Augustus himself knew that without Agrippa's genius, he never would have made it to power.",
+"Besides being a brilliant general, Agrippa also built a big part of ancient Rome: aqueducts, sewers, and even the city's first public bathhouse. A few years after his great victory, he built the first Pantheon with his own money — not for his own glory, but as a thank-you gift 'to all the gods.' And it's exactly because of that humility that, almost a hundred and fifty years later, when Hadrian built the building you're standing in now, he chose to leave Agrippa's name on the entrance instead of his own — out of respect for the young genius who started it all.",
+"Look around at this round space: the height from the floor to the top of the dome is exactly equal to its width. If you could take a perfect sphere and set it down in here, it would fit exactly. That's not an accident — it's precise design, from almost two thousand years ago, without computers and without modern tools.",
+"The dome above you is still, to this day, the largest dome in the world built from concrete with no metal reinforcement inside at all. The Romans didn't have steel, so they were clever in a different way: near the top, they used lighter materials so the dome wouldn't be too heavy and collapse under its own weight.",
+"The name 'Pantheon' is a Greek word meaning 'to all the gods' — because it was built as a temple honoring all the Roman gods together, not just one. And if you're wondering how such an ancient building stayed intact when most of ancient Rome's other buildings collapsed or were destroyed — the answer is that in 609 CE, roughly fourteen hundred years after it was built, the pope turned it into a Christian church. And because it became a church, nobody tore it down, and nobody stripped its stone for other buildings, the way it happened to some of the city's other ancient structures.",
+"Notice the heavy bronze doors you walked through at the entrance too — those are doors from the Roman period itself, and they still work today exactly like they did back then. And if it starts raining right now, don't worry: the rain really does fall straight through the oculus into the building, but there are small holes in the floor that drain the water away, exactly the way the Romans planned it when they built this place.",
+"Some very famous people are buried inside the Pantheon too — the painter Raphael, one of the greatest painters in art history, is buried here, and so are two Italian kings.",
+"So Lia, Lior — stop for a moment, look up at the oculus again, and think about this: the light coming in right now is entering in exactly the same way it has for almost two thousand years — long before electricity, before cars, and before anyone in our family was even born. We're just a few more people stopping here for a minute, looking up, exactly like everyone who stood here before you."
+]
+};
+const VG_META={
+he:{bcp:'he-IL',dir:'rtl'},
+ru:{bcp:'ru-RU',dir:'ltr'},
+en:{bcp:'en-US',dir:'ltr'}
+};
+let vgLang='he';
+let vgQueue=[],vgQueueIndex=0,vgSpeaking=false;
+const vgTranscript=document.getElementById('vgTranscript');
+
+function renderVgTranscript(){
+  const meta=VG_META[vgLang];
+  vgTranscript.lang=vgLang;
+  vgTranscript.dir=meta.dir;
+  vgTranscript.style.textAlign=meta.dir==='rtl'?'right':'left';
+  vgTranscript.innerHTML=VG_TEXT[vgLang].map(p=>`<p>${p}</p>`).join('');
+}
+renderVgTranscript();
+
+function setVgLang(lang,btn){
+  if(vgLang===lang)return;
+  stopVoiceGuide();
+  vgLang=lang;
+  document.querySelectorAll('.vg-lang-btn').forEach(x=>x.classList.toggle('active',x===btn));
+  renderVgTranscript();
+}
+
+function toggleVoiceText(){vgTranscript.classList.toggle('open')}
+
+/* Split into sentences and speak them as a short queue (with a small pause
+   between each) instead of one giant utterance — this reads much more
+   naturally than a single long block, which browser TTS tends to flatten
+   into a monotone drone. */
+function vgSplitSentences(text){
+  const parts=text.match(/[^.!?…]+[.!?…]*/g);
+  return (parts||[text]).map(s=>s.trim()).filter(Boolean);
+}
+function vgPickVoice(bcp){
+  const base=bcp.split('-')[0].toLowerCase();
+  const voices=speechSynthesis.getVoices().filter(v=>v.lang.toLowerCase().startsWith(base));
+  if(!voices.length)return null;
+  const premium=voices.find(v=>/google|enhanced|premium|neural|wavenet/i.test(v.name)&&!/compact/i.test(v.name));
+  const notCompact=voices.find(v=>!/compact/i.test(v.name));
+  return premium||notCompact||voices[0];
+}
+function stopVoiceGuide(){
+  speechSynthesis.cancel();
+  vgSpeaking=false;
+  const btn=document.getElementById('vgPlayBtn'),label=document.getElementById('vgPlayLabel');
+  btn.classList.remove('playing');label.textContent='Play voice guide';
+}
+function vgSpeakNext(){
+  if(!vgSpeaking)return;
+  if(vgQueueIndex>=vgQueue.length){stopVoiceGuide();return}
+  const meta=VG_META[vgLang];
+  const u=new SpeechSynthesisUtterance(vgQueue[vgQueueIndex]);
+  u.lang=meta.bcp;u.rate=.96;u.pitch=1;
+  u.voice=vgPickVoice(meta.bcp);
+  u.onend=()=>{vgQueueIndex++;setTimeout(vgSpeakNext,180)};
+  u.onerror=()=>{vgQueueIndex++;setTimeout(vgSpeakNext,180)};
+  speechSynthesis.speak(u);
+}
+function toggleVoiceGuide(){
+  const btn=document.getElementById('vgPlayBtn'),label=document.getElementById('vgPlayLabel');
+  if(!('speechSynthesis'in window)){alert('Voice playback is not supported by this browser.');return}
+  if(vgSpeaking){stopVoiceGuide();return}
+  speechSynthesis.cancel();
+  document.querySelectorAll('.speak').forEach(x=>x.classList.remove('playing'));
+  vgQueue=VG_TEXT[vgLang].flatMap(vgSplitSentences);
+  vgQueueIndex=0;vgSpeaking=true;
+  btn.classList.add('playing');label.textContent='Playing… tap to stop';
+  vgSpeakNext();
+}
+</script>
+</body>
+</html>
